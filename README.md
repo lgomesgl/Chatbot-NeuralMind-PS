@@ -13,7 +13,7 @@ Siga as instruções abaixo para configurar e executar o projeto em sua máquina
 Clone este repositório para sua máquina local usando o Git:
 
 ```bash
-git clone https://github.com/lgomesgl/chatbot-neuralmind-ps.git
+git clone https://github.com/lgomesgl/Chatbot-NeuralMind-PS.git
 ```
 
 ### **2. Criar e ativar um ambiente virtual**
