@@ -13,7 +13,7 @@ Siga as instruções abaixo para configurar e executar o projeto em sua máquina
 Clone este repositório para sua máquina local usando o Git:
 
 ```bash
-git clone 'https://github.com/lgomesgl/chatbot-neuralmind-ps.git'
+git clone https://github.com/lgomesgl/chatbot-neuralmind-ps.git
 ```
 
 ### **2. Criar e ativar um ambiente virtual**
@@ -45,11 +45,16 @@ export GROQ_API_KEY="sua_chave_de_api"
 ### **5. Rodar o projeto**
 Inicie o chatbot utilizando o Streamlit:
 ```bash
-cd /scr
+cd src
 streamlit run main.py
 ```
 
-# ** System Design**
+# Uso do ChatGPT
+1. Pedi para ele fazer uma lista de taferas que eu precisava fazer a partir dos system design que eu criei com todos os detalhes de cada etapa.
+2. Criação de testes no código para fins de melhorias das funções criadas.
+3. Maneiras de fazer o projeto sem o uso da API da OpenAI.
+
+# System Design
 ![Texto alternativo](media/System_design_chatbot.png)
 
 ## 2.1 Interface do Usuário (UI)
@@ -185,10 +190,6 @@ As pontuações ROUGE e BLEU são utilizadas para avaliar o desempenho do modelo
     - ROUGE-2: `{'r': 0.6, 'p': 0.12371134020618557, 'f': 0.20512820229381257}`
     - ROUGE-L: `{'r': 0.7777777777777778, 'p': 0.19718309859154928, 'f': 0.3146067383461684}`
   - **Pontuação BLEU:** `0.0832470696366412`
-
-## Conclusão
-
-As métricas ROUGE e BLEU são úteis para avaliar a qualidade das respostas geradas em tarefas de geração de texto, como no caso de sistemas de Perguntas e Respostas. As pontuações podem ser usadas para ajustar o modelo e melhorar sua performance.
 
 # Testes Unitários e Melhorias no Código
 

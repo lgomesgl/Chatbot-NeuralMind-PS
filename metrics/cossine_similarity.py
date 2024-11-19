@@ -3,29 +3,29 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 def calculate_cosine_similarity(query_embedding: np.ndarray, document_embeddings: np.ndarray):
     """
-    Calcula a similaridade de cossenos entre a consulta e os documentos.
+    Calculates the cosine similarity between the query and the documents.
 
     Args:
-        query_embedding (np.ndarray): O vetor de embeddings da consulta do usuário.
-        document_embeddings (np.ndarray): Os embeddings dos documentos no índice.
+        query_embedding (np.ndarray): The embedding vector of the user query.
+        document_embeddings (np.ndarray): The embeddings of the documents in the index.
 
     Returns:
-        np.ndarray: A similaridade de cossenos entre a consulta e os documentos.
+        np.ndarray: The cosine similarity between the query and the documents.
     """
     return cosine_similarity(query_embedding, document_embeddings)
 
 def get_top_k_similar_documents(query_embedding: np.ndarray, document_embeddings: np.ndarray, k: int = 10):
     """
-    Retorna os índices dos k documentos mais similares com base na similaridade de cossenos.
+    Returns the indices of the top-k most similar documents based on cosine similarity.
 
     Args:
-        query_embedding (np.ndarray): O vetor de embeddings da consulta do usuário.
-        document_embeddings (np.ndarray): Os embeddings dos documentos no índice.
-        k (int): O número de documentos a retornar.
+        query_embedding (np.ndarray): The embedding vector of the user query.
+        document_embeddings (np.ndarray): The embeddings of the documents in the index.
+        k (int): The number of documents to return.
 
     Returns:
-        list: Índices dos k documentos mais similares.
+        list: Indices of the top-k most similar documents.
     """
     similarities = calculate_cosine_similarity(query_embedding, document_embeddings)
-    sorted_indices = np.argsort(similarities[0])[::-1]  # Ordenar em ordem decrescente
+    sorted_indices = np.argsort(similarities[0])[::-1]  # Sort in descending order
     return sorted_indices[:k], similarities[0][sorted_indices[:k]]

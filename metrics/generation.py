@@ -1,4 +1,3 @@
-from typing import Dict
 from rouge import Rouge
 from nltk.translate.bleu_score import sentence_bleu
 
